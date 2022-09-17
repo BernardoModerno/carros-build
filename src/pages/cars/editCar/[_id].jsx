@@ -19,7 +19,7 @@ export default function EditCar(){
       async function loadCars() {
           const apiClient = setupAPIClient();
     
-          const response = await apiClient.get(`cars/${router.query._id}`);
+          const response = await apiClient.get(`/${router.query._id}`);
           setTitle(response.data.title)
           setBrand(response.data.brand)
           setPrice(response.data.price)
@@ -34,7 +34,7 @@ export default function EditCar(){
   
       const apiClient = setupAPIClient();
 
-      await apiClient.put(`cars/${router.query._id}`, {
+      await apiClient.put(`/${router.query._id}`, {
         title,
         brand,
         price,

@@ -18,7 +18,7 @@ export default  function Cars() {
     async function loadCars() {
         const apiClient = setupAPIClient();
   
-        const response = await apiClient.get('/cars');
+        const response = await apiClient.get('/');
 
         /* console.log(data) */
         setCarsList(response.data)
@@ -31,7 +31,7 @@ export default  function Cars() {
   async function del (_id) {
     if (window.confirm('Você realmente deseja excluir esse carro?')) {
         const apiClient = setupAPIClient();
-        await apiClient.delete(`cars/${_id}`);
+        await apiClient.delete(`/${_id}`);
 
         toast.success('Carro excluído!')
         

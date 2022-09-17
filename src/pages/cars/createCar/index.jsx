@@ -21,7 +21,7 @@ export default function CreateCar(){
     }
 
     const apiClient = setupAPIClient();
-    await apiClient.post('/cars', {
+    await apiClient.post('/', {
       title: title,
       brand: brand,
       price: price,
